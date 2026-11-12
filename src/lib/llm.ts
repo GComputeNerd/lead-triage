@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { ScoreSchema, type Score } from "./schemas";
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -35,11 +35,12 @@ export async function scoreLead(
           model: MODEL,
           contents: `Enquiry:\n"""${message}"""`,
           config: {
-            systemInstruction: SYSTEM,
-            responseMimeType: "application/json",
-            temperature: 0,
-            maxOutputTokens: 500,
-          },
+          systemInstruction: SYSTEM,
+          responseMimeType: "application/json",
+          temperature: 0,
+          maxOutputTokens: 800,
+          thinkingConfig: { thinkingLevel: ThinkingLevel.MINIMAL },
+        },
         }),
         10_000
       );
