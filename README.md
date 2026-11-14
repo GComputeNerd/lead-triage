@@ -62,8 +62,6 @@ flowchart LR
 - Row Level Security is enabled on `leads`.
 - The `anon` role has all table privileges revoked.
 - Staff (authenticated users) can read leads and update **only the `status` column** (column-level grant).
-- Public signups are disabled, so only accounts created by an admin can sign in.
-- The anon key is exposed in the browser by design; RLS is what protects the data.
 
 The full schema and policies are in [`supabase/schema.sql`](supabase/schema.sql).
 
@@ -156,5 +154,4 @@ supabase/schema.sql                  # table, RLS and grants
 - **Single clinic, single prompt.** The business context lives in one system prompt. A real product would load it per client.
 - **Small evaluation set.** A larger, independently labeled set would give a more trustworthy accuracy figure.
 - **No webhook authentication.** The enquiry endpoint is public by design (it receives form posts). A production version would add rate limiting and bot protection.
-- **Free-tier LLM.** Prompts sent through the free Gemini tier may be used by Google to improve its products, which is acceptable only because all data here is synthetic.
 - **Next steps:** WhatsApp Cloud API channel with human handoff, scheduled weekly report email, CI on every push.
