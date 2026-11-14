@@ -4,8 +4,6 @@ A full-stack application that captures enquiries for a dental clinic, scores eac
 
 It is built around one business question: **which campaigns bring in the leads worth following up?**
 
-**Live demo:** [TODO: Vercel URL]
-
 ![Enquiry form](docs/form.png)
 ![Leads dashboard](docs/dashboard.png)
 ![Campaign report](docs/report.png)
@@ -46,7 +44,6 @@ flowchart LR
 | Database and auth | Supabase |
 | LLM | Google Gemini |
 | Validation | Zod |
-| Hosting | Vercel |
 
 ## Design decisions
 
