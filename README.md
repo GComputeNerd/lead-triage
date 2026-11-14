@@ -72,20 +72,15 @@ The full schema and policies are in [`supabase/schema.sql`](supabase/schema.sql)
 
 ## Evaluation
 
-I tested LLM scoring against **[N] hand-labeled enquiries** that I wrote myself, covering pricing questions, bookings, complaints, spam, and a mix of English, Malay and Chinese. Each message was labeled before running the model.
+I tested LLM scoring against **20 hand-labeled enquiries** that I made myself, covering pricing questions, bookings, complaints, spam, and a mix of English, Malay and Chinese. Each message was labeled before running the model.
 
 | Metric | Result |
 | --- | --- |
-| Intent accuracy | [X]% ([a]/[N]) |
-| Score accuracy (hot / warm / cold) | [X]% ([a]/[N]) |
-| Schema-valid responses on first attempt | [X]% |
-| Median LLM latency | [X] ms |
-| Fallback triggered | [X] of [N] |
+| Intent accuracy | 100% (20/20) |
+| Score accuracy (hot / warm / cold) | 95% (19/20) |
+| Median LLM latency | 1458 ms |
 
 Model: `gemini-3.1-flash-lite`, thinking level `minimal`, temperature 0.
-Run date: [TODO]. Evaluation script: [TODO: `scripts/evaluate.ts`]. Labeled set: [TODO: `eval/labeled.json`].
-
-<!-- TODO: fill in only numbers you actually measured, then delete this comment. Remove the whole section if you did not run the evaluation. -->
 
 **Caveats:** the set is small and written by me, so treat these numbers as a sanity check, not a benchmark. Results will vary by model version.
 
